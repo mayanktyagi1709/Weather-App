@@ -1,18 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Form.module.css";
 
 const Form = () => {
+  const [location, setLocation] = useState('');
+  const handleSubmit = (e) =>
+  {
+    e.preventDefault();
+    if(!location || location === '')
+    {
+      return;
+    }
+  }
+
+  const handleChange = (e) =>
+  {
+    setLocation(e.target.value);
+  }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         aria-label="location"
         type="text"
         className= {`${styles.input} form-control`}
         placeholder="Search Location"
         required
+        value={location}
+        onChange={handleChange}
       />
 
-      <button type="submit" className={styles.button}>
+      <button onClick={handleSubmit} type="submit" className={styles.button}>
         SEARCH
       </button>
     </form>
