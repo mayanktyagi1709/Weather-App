@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Form.module.css";
 
-const Form = () => {
+const Form = (props) => {
   const [location, setLocation] = useState('');
   const handleSubmit = (e) =>
   {
@@ -10,6 +10,7 @@ const Form = () => {
     {
       return;
     }
+    props.submitSearch(location);
   }
 
   const handleChange = (e) =>
