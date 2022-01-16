@@ -1,4 +1,4 @@
-const forecastDetails = data => [
+const currentDayForecast = data => [
     {
         name: 'predictability',
         value: data.predictability,
@@ -31,4 +31,4 @@ const forecastDetails = data => [
     },
 ];
 
-export default forecastDetails;
+export default currentDayForecast;

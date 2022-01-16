@@ -16,12 +16,12 @@ const Page = () => {
   return (
     <>
       <Header />
-      <div className={`${styles.box} position-relative`}>
+      {!forecast && <div className={`${styles.box} position-relative`}>
         {!isLoading && <Form submitSearch={submitSearch}/>}
         {isError && <Error message={isError}/>}
         {isLoading && <Loading/>}
-      </div>
-      {!forecast && <Forecast/>}
+      </div>}
+      {forecast && <Forecast forecast={forecast}/>}
     </>
   );
 };
