@@ -10,8 +10,8 @@ import useForecast from "../../hooks/useForecast";   // custom hook
 const Page = () => {
   const {isError, isLoading, forecast, submitReq} = useForecast();
 
-  const submitSearch = (value) => {
-    submitReq(value);
+  const submitSearch = (location) => {
+    submitReq(location);
   }
   return (
     <>
